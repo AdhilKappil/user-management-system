@@ -1,0 +1,26 @@
+
+<%- include('../layouts/header.ejs') %>
+
+<div class="centered-content">
+  <h1>Welcome <%= user.name %></h1>
+
+  <table class="user-info-table">
+    <tr>
+      <td>Email</td>
+      <td><%= user.email %></td>
+    </tr>
+    <tr>
+      <td>Mobile Number</td>
+      <td><%= user.mobile %></td>
+    </tr>
+  </table>
+  <br>
+  <a href="/edit?id=<%= user._id %>">Edit</a>
+  <br>
+  <div class="text-center">
+    <button class="btn btn-danger"><a href="/logout" style="text-decoration: none; color: inherit;">Logout</a></button>
+  </div>
+  
+</div>
+
+<%- include('../layouts/footer.ejs') %>

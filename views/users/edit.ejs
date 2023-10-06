@@ -1,0 +1,26 @@
+
+<%- include('../layouts/header.ejs') %>
+
+<div class="submit-container">
+    <h2>Edit Your Profile</h2>
+    <div>
+        <form action="" method="post">
+            <input type="hidden" name="user_id" value="<%= user._id %>">
+            <br>
+            <div class="form-group">
+                <input type="text" class="form-control" name="name" value="<%= user.name %>"  placeholder="Enter Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" value="<%= user.email %>" placeholder="Enter Email" required>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="mno" value="<%= user.mobile %>" placeholder="Enter Mobile" required>
+            </div>
+            <div class="text-center">
+                <input type="submit" class="btn btn-success" value="Update Profile">
+            </div>
+        </form>
+    </div>
+    <br>
+
+<%- include('../layouts/footer.ejs') %>

@@ -1,0 +1,33 @@
+
+<%- include('../layouts/header.ejs') %>
+
+<div class="submit-container ">
+    <h1>Admin Login</h1>
+    <div >
+        <form action="" method="post" onsubmit="return validateForm()">
+
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" placeholder="Enter Email" id="email">
+                <p id="email-error" class="error-message"></p>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="password" placeholder="Enter Password" id="password">
+                <p id="password-error" class="error-message"></p>
+            </div>
+            <div class="text-center">
+                <input type="submit" class="btn btn-primary button" value="Login">
+            </div>
+            <br>
+        </form>
+
+        <%
+        if(typeof message !== 'undefined'){
+         %>
+           <h6 style="color: red;"><%= message %></h6>
+         <%
+        }
+     %>
+
+    </div>
+
+<%- include('../layouts/footer.ejs') %>

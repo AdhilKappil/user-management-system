@@ -1,0 +1,65 @@
+
+<%- include('../layouts/header.ejs') %>
+
+
+
+<div class="centered-content">
+   
+    <h1>Dashboard</h1>
+    <br>
+    
+    <a href="/admin/new-user">Add New user</a> 
+    <br><br>
+
+    <div class="form-group">
+      <form  class="flex-css-1">
+         <input type="text" class="form-control" style="width: 50%;" placeholder="search..." name="search">
+      </form>
+  </div>
+    
+    <table class="user-info-table">
+      <tr>
+         <th>Name</th>
+         <th>Email</th>
+         <th>Mobile</th>
+         <th>Actions</th>
+      </tr>
+
+      <%
+         if(users.length > 0){
+            
+            for(let i=0; i<users.length; i++){
+                %>
+                <tr>
+                    <td><%= users[i].name %></td>
+                    <td><%= users[i].email %></td>
+                    <td><%= users[i].mobile %></td>
+                    <td><a href="/admin/edit-user?id=<%= users[i]._id %>">Edit</a></td>
+                    <td><a id="delete" href="/admin/delete-user?id=<%= users[i]._id %>"  onclick="return confirm('Are you sure you want to delete <%= users[i].name %>')">&#xE872;</a></td>
+                </tr>
+                <%
+            }
+
+         }else{
+            %>
+             <tr>
+                <td colspan="5">Users Not Found</td>
+             </tr>
+             <%
+         }
+         %>
+
+    </table>
+
+    <br>
+    <div class="text-center">
+      <button class="btn btn-dark"><a href="/admin/home" style="text-decoration: none; color: inherit;">Back To Home</a></button>
+    </div>
+    
+  </div>
+
+<%- include('../layouts/footer.ejs') %>
+
+
+
+

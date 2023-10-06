@@ -1,0 +1,28 @@
+
+
+<%- include('../layouts/header.ejs') %>
+
+<div class="centered-content">
+  <h1>Welcome <%= admin.name %></h1>
+  <br>
+  <a href="/admin/dashboard">Dashboard</a>
+
+  <table class="user-info-table">
+    <tr>
+      <td>Email</td>
+      <td><%= admin.email %></td>
+    </tr>
+    <tr>
+      <td>Mobile Number</td>
+      <td><%= admin.mobile %></td>
+    </tr>
+  </table>
+
+  <br>
+  <div class="text-center">
+    <button class="btn btn-danger"><a href="/admin/logout" style="text-decoration: none; color: inherit;">Logout</a></button>
+  </div>
+  
+</div>
+
+<%- include('../layouts/footer.ejs') %>
